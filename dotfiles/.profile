@@ -1,4 +1,4 @@
-export WLR_DRM_DEVICES=/dev/dri/card0
+#export WLR_DRM_DEVICES=/dev/dri/card1
 
 export VK_KHR_surface=wayland
 export VDPAU_DRIVER=radeonsi
