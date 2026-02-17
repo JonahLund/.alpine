@@ -11,5 +11,4 @@ ln -sf "$DOTFILES/foot" \
   "$DOTFILES/gtk-3.0" \
   "$DOTFILES/workstyle" \
   "$DOTFILES/tmux" \
-  "$DOTFILES/rc" \
   "$HOME/.config"

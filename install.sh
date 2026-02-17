@@ -23,15 +23,10 @@ sudo rc-update add nftables boot
 echo "Installing graphics..."
 sudo apk add linux-firmware-amdgpu mesa-dev mesa-dri-gallium mesa-va-gallium mesa-vulkan-ati
 
-## Create gui runlevel
-mkdir -p ~/.config/rc/runlevels/gui
-
 ### Install pipewire
 echo "Installing pipewire..."
 sudo apk add pipewire pipewire-tools pipewire-spa-tools pipewire-pulse pipewire-spa-vulkan
 sudo apk add wireplumber wireplumber-logind
-rc-update -U add pipewire gui
-rc-update -U add wireplumber gui
 
 ### Install xdg
 echo "Installing xdg..."
