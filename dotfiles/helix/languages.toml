@@ -11,8 +11,8 @@ command = "iwes"
 
 [[language]]
 name = "markdown"
-language-servers = ["iwe"]          # you might want more LSPs in here
-auto-format = true                  # optional, enable format-on-save
+language-servers = ["iwe"]
+auto-format = true
 soft-wrap.enable = true
 soft-wrap.wrap-at-text-width = true
 text-width = 80

@@ -1,0 +1,11 @@
+[[desktop]]
+names = ["sway", "helix", "workstyle"]
+to = "~/.config"
+
+[[desktop]]
+names = [".gitconfig", ".profile"]
+to = "~/"
+
+[[desktop]]
+names = ["bin"]
+to = "/usr/bin"

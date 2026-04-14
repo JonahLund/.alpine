@@ -1,4 +1,4 @@
-export WLR_DRM_DEVICES=/dev/dri/card0
+#export WLR_DRM_DEVICES=/dev/dri/card0
 
 export VK_KHR_surface=wayland
 export VDPAU_DRIVER=radeonsi
@@ -8,8 +8,8 @@ export TERM=foot
 export BROWSER=librewolf
 export GIT_EDITOR=hx
 
-export RUSTC_WRAPPER=sccache 
-export RUSTFLAGS="-Ctarget-feature=-crt-static -Zthreads=4 -Clink-arg=-fuse-ld=mold"
+# export RUSTC_WRAPPER=sccache 
+# export RUSTFLAGS="-Ctarget-feature=-crt-static -Zthreads=4 -Clink-arg=-fuse-ld=mold"
 
 export GTK_IM_MODULE=fcitx
 export QT_IM_MODULE=fcitx

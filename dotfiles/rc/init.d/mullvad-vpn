@@ -1,0 +1,12 @@
+#!/sbin/openrc-run
+
+description="Mullvad VPN"
+
+command="/usr/bin/mullvad-cli"
+
+supervisor=supervise-daemon
+error_logger="logger -t '${RC_SVCNAME}' -p daemon.error"
+
+depend() {
+	need mullvad-daemon
+}
