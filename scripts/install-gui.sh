@@ -58,11 +58,8 @@ adduser $USER seat
 adduser greetd seat
 
 rc-update add greetd
-rc-service greetd start
 rc-update add seatd
-rc-service seatd start
 rc-update add dbus
-rc-service dbus start
 
 sudo -u $USER rc-update -U add xdg-desktop-portal-wlr gui
 sudo -u $USER rc-update -U add pipewire gui

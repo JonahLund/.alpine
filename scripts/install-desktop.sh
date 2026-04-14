@@ -4,3 +4,5 @@
 ./install-gui.sh
 ./install-user-apps.sh
 ./install-dev-tools.sh
+
+reboot
