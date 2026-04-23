@@ -1,14 +1,12 @@
 #!/bin/sh
 
-USER=${SUDO_USER:-$USER}
-
-sudo -u $USER mkdir -p /home/$USER/.config/rc/runlevels/gui
+ALPUSER=${SUDO_USER:-$USER}
 
 # Install sway
 apk add sway swaylock swaybg swayidle
 
 # Install wayland
-apk xwayland wl-clipboard
+apk add xwayland wl-clipboard
 
 # Install font
 apk add font-jetbrains-mono
@@ -19,7 +17,7 @@ apk add greetd greetd-openrc greetd-agreety
 # Install audio
 apk add pipewire wireplumber pipewire-pulse
 
-apk add dbus dbus-openrc seatd seatd-openrc xdg-utils xdg-desktop-portal-wlr xdg-desktop-portal-wlr-openrc
+apk add dbus dbus-openrc seatd seatd-openrc xdg-user-dirs xdg-utils xdg-desktop-portal-wlr xdg-desktop-portal-wlr-openrc
 
 xdg-user-dirs-update
 
@@ -54,14 +52,14 @@ command = agreety --cmd "dbus-run-session sway"
 user = "greetd"
 EOF
 
-adduser $USER seat
+adduser $ALPUSER seat
 adduser greetd seat
 
 rc-update add greetd
 rc-update add seatd
 rc-update add dbus
 
-sudo -u $USER rc-update -U add xdg-desktop-portal-wlr gui
-sudo -u $USER rc-update -U add pipewire gui
-sudo -u $USER rc-update -U add wireplumber gui
-sudo -u $USER rc-update -U add pipewire-pulse gui
+install -Dm644 /etc/user/init.d/xdg-desktop-portal-wlr -t /home/$ALPUSER/.config/rc/runlevels/gui
+install -Dm644 /etc/user/init.d/pipewire -t /home/$ALPUSER/.config/rc/runlevels/gui
+install -Dm644 /etc/user/init.d/pipewire-pulse -t /home/$ALPUSER/.config/rc/runlevels/gui
+install -Dm644 /etc/user/init.d/wireplumber -t /home/$ALPUSER/.config/rc/runlevels/gui

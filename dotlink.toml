@@ -1,11 +1,7 @@
-[[desktop]]
+[[alpine]]
 names = ["sway", "helix", "workstyle"]
 to = "~/.config"
 
-[[desktop]]
+[[alpine]]
 names = [".gitconfig", ".profile"]
 to = "~/"
-
-[[desktop]]
-names = ["bin"]
-to = "/usr/bin"

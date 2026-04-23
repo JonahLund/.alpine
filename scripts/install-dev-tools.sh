@@ -1,7 +1,7 @@
 #!/bin/sh
 
-USER=${SUDO_USER:-$USER}
+ALPUSER=${SUDO_USER:-$USER}
 
-apk add rustup git tmux taplo iwe tmux-sessionizer
+apk add rustup git tmux taplo
 
-# sudo -u $USER "rustup-init -y --default-toolchain nightly"
+# sudo -u $ALPUSER "rustup-init -y --default-toolchain nightly"
