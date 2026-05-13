@@ -18,8 +18,8 @@ exec fcitx5
 
 ### Output configuration
 exec_always swaybg -c 0c0c0c
-output DP-1     pos 0    0 mode 1920x1080@143.998Hz
-output HDMI-A-1 pos 1920 0 mode 1920x1080@143.998Hz
+output DP-1     pos 0    0 mode 1920x1080@120.000Hz
+output HDMI-A-1 pos 1920 0 mode 1920x1080@120.000Hz
 
 ### Idle configuration
 exec swayidle -w \
@@ -30,7 +30,7 @@ exec swayidle -w \
 ### Input configuration
 input type:keyboard {
     xkb_layout se
-    xkb_options caps:swapescape
+    # xkb_options caps:swapescape
 }
 
 ### Key bindings
