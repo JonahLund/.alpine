@@ -1,29 +1,12 @@
 #!/bin/sh
 
-get_cpu_usage() {
-    # Print the average CPU usage over the last 1 minute
-    # We use awk to get the first value from the output of uptime, which is the 1-minute load average
-    echo $(uptime | awk -F'[a-z]:' '{print $2}' | cut -f1 -d,)
-}
+while :; do
+    cpu=$(uptime | awk -F'load average: ' '{print $2}' | cut -d, -f1)
+    ram=$(free | awk '/^Mem:/ {printf "%.0f%%", $3/$2*100}')
+    disk=$(df -h / | awk 'NR==2 {print $5}')
 
-get_ram_usage() {
-    # Print the percentage of used RAM
-    # We use free and awk to calculate the percentage of used memory
-    echo $(free | awk '/Mem/{printf("%.2f%"), $3/$2 * 100.0}')
-}
+    printf '<span font="11">[CPU <b>%s</b>] [RAM <b>%s</b>] [DISK <b>%s</b>] %s</span>\n' \
+        "$cpu" "$ram" "$disk" "$(date '+%a %-d %b %H:%M')"
 
-get_disk_usage() {
-    # Print the percentage of used disk space on the root partition
-    # We use df and awk to calculate the percentage of used disk space
-    echo $(df / | awk 'NR==2 {print $5}')
-}
-
-while true; do
-    cpu_usage=$(get_cpu_usage)
-    ram_usage=$(get_ram_usage)
-    disk_usage=$(get_disk_usage)
-    date_output=$(date +'%a %-d %b %H:%M')
-
-    echo "<span font=\"11\">CPU <b>[$cpu_usage]</b> RAM <b>[$ram_usage]</b> DISK <b>[$disk_usage]</b> $date_output</span>"
     sleep 5
 done

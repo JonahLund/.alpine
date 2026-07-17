@@ -2,7 +2,7 @@
 	defaultBranch = main
 [user]
 	name = Jonah Lund
-	email = jonahlund@proton.me
+	email = jonahlund@tuta.io
 	signingkey = /home/jlund/.ssh/id_ed25519.pub
 [gpg]
 	format = ssh

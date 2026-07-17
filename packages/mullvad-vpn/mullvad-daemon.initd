@@ -1,0 +1,13 @@
+#!/sbin/openrc-run
+
+name=$RC_SVCNAME
+description="Mullvad VPN daemon"
+supervisor="supervise-daemon"
+command="/usr/bin/mullvad-daemon"
+command_args="-v --disable-stdout-timestamps"
+pidfile="/run/${RC_SVCNAME}.pid"
+command_background=true
+
+depend() {
+	need net
+}

@@ -1,0 +1,8 @@
+#!/sbin/openrc-run
+
+description="Workstyle"
+
+command="/usr/bin/workstyle"
+
+supervisor=supervise-daemon
+error_logger="logger -t '${RC_SVCNAME}' -p daemon.error"

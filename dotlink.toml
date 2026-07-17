@@ -1,0 +1,7 @@
+[[default]]
+names = ["sway", "helix", "workstyle", "fontconfig", "foot", "tmux"]
+to = "~/.config"
+
+[[default]]
+names = [".gitconfig", ".profile"]
+to = "~/"
