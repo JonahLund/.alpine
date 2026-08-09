@@ -4,10 +4,11 @@ set $left h
 set $down j
 set $up k
 set $right l
-set $term footclient
+set $term foot
 set $menu rofi -show drun | xargs swaymsg exec --
 
 ### Autostart
+exec dbus-update-activation-environment XDG_CURRENT_DESKTOP=sway WAYLAND_DISPLAY DISPLAY XDG_CURRENT_DESKTOP SWAYSOCK I3SOCK XCURSOR_SIZE XCURSOR_THEME
 exec openrc -U gui
 
 ### Output configuration

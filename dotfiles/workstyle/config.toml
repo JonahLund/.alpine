@@ -7,10 +7,7 @@
 "transmission" = ""
 "mpv" = ""
 "music" = ""
-"librewolf" = ""
-"prismlauncher" = "󰍳"
-"minecraft" = "󰍳"
-"steam" = ""
+"librewolf" = ""
 
 [other]
 fallback_icon = "🤨"

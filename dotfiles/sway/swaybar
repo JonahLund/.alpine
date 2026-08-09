@@ -5,7 +5,7 @@ while :; do
     ram=$(free | awk '/^Mem:/ {printf "%.0f%%", $3/$2*100}')
     disk=$(df -h / | awk 'NR==2 {print $5}')
 
-    printf '<span font="11">[CPU <b>%s</b>] [RAM <b>%s</b>] [DISK <b>%s</b>] %s</span>\n' \
+    printf '[CPU <b>%s</b>] [RAM <b>%s</b>] [DISK <b>%s</b>] %s\n' \
         "$cpu" "$ram" "$disk" "$(date '+%a %-d %b %H:%M')"
 
     sleep 5

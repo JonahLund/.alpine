@@ -1,0 +1,4 @@
+#!/sbin/openrc-run
+
+command="workstyle"
+supervisor=supervise-daemon

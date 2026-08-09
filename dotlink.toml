@@ -1,5 +1,14 @@
 [[default]]
-names = ["sway", "helix", "workstyle", "fontconfig", "foot", "tmux"]
+names = [
+  "sway",
+  "helix",
+  "workstyle",
+  "fontconfig",
+  "foot",
+  "tmux",
+  "rc",
+  "tms",
+]
 to = "~/.config"
 
 [[default]]
